@@ -11,12 +11,6 @@ from from_root import from_root
 
 
 @dataclass
-class DataIngestionConfig:
-    train_data_path = os.path.join(from_root(), 'artifacts')
-    test_data_path = os.path.join(from_root(), 'artifacts')
-    raw_data_path = os.path.join(from_root(), 'artifacts')
-
-
 class DataIngestionconfig:
     df_path = os.path.join(from_root(), 'data', 'aps_failure_training_set.csv')
     train_data_path:str=os.path.join(from_root(),'artifacts', 'train.csv')
@@ -56,9 +50,8 @@ class DataIngestion:
             raise CustomException(e, sys)
 
 
-'''
+
 if __name__=='__main__':
     data_ingestion = DataIngestion()
     data_ingestion.initiate_data_ingestion()
 
-'''
